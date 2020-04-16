@@ -38,7 +38,10 @@
 #include "G4Trd.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
-#include "G4SystemOfUnits.hh"
+#include "G4SystemOfUnits.hh
+
+#include "CADMesh.hh"
+
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -52,39 +55,46 @@ B1DetectorConstruction::B1DetectorConstruction()
 B1DetectorConstruction::~B1DetectorConstruction()
 { }
 
+//#CadMesh
+G4ThreeVector offset;
+G4VSolid * cad_solid;
+G4LogicalVolume * cad_logical;
+G4VPhysicalVolume * cad_physical;
+
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 G4VPhysicalVolume* B1DetectorConstruction::Construct()
-{  
+{
   // Get nist material manager
   G4NistManager* nist = G4NistManager::Instance();
-  
+
   // Envelope parameters
   //
   G4double env_sizeXY = 20*cm, env_sizeZ = 30*cm;
   G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
-   
+
   // Option to switch on/off checking of volumes overlaps
   //
   G4bool checkOverlaps = true;
 
-  //     
+  //
   // World
   //
   G4double world_sizeXY = 1.2*env_sizeXY;
   G4double world_sizeZ  = 1.2*env_sizeZ;
   G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
-  
-  G4Box* solidWorld =    
+
+  G4Box* solidWorld =
     new G4Box("World",                       //its name
        0.5*world_sizeXY, 0.5*world_sizeXY, 0.5*world_sizeZ);     //its size
-      
-  G4LogicalVolume* logicWorld =                         
+
+  G4LogicalVolume* logicWorld =
     new G4LogicalVolume(solidWorld,          //its solid
                         world_mat,           //its material
                         "World");            //its name
-                                   
-  G4VPhysicalVolume* physWorld = 
+
+  G4VPhysicalVolume* physWorld =
     new G4PVPlacement(0,                     //no rotation
                       G4ThreeVector(),       //at (0,0,0)
                       logicWorld,            //its logical volume
@@ -93,19 +103,19 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                       false,                 //no boolean operation
                       0,                     //copy number
                       checkOverlaps);        //overlaps checking
-                     
-  //     
+
+  //
   // Envelope
-  //  
-  G4Box* solidEnv =    
+  //
+  G4Box* solidEnv =
     new G4Box("Envelope",                    //its name
         0.5*env_sizeXY, 0.5*env_sizeXY, 0.5*env_sizeZ); //its size
-      
-  G4LogicalVolume* logicEnv =                         
+
+  G4LogicalVolume* logicEnv =
     new G4LogicalVolume(solidEnv,            //its solid
                         env_mat,             //its material
                         "Envelope");         //its name
-               
+
   new G4PVPlacement(0,                       //no rotation
                     G4ThreeVector(),         //at (0,0,0)
                     logicEnv,                //its logical volume
@@ -114,28 +124,40 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
- 
-  //     
+
+//----CADMesh-----------------------------------------------------------------
+  offset = G4ThreeVector(-30*cm, 0, 0);
+  CADMesh * mesh = new CADMesh("../../models/cone.ply", mm, offset, false);
+
+  cad_solid = mesh->TessellatedMesh();
+  cad_logical = new G4LogicalVolume(cad_solid, water, "cad_logical", 0, 0, 0);
+  cad_physical = new G4PVPlacement(0, G4ThreeVector(), cad_logical,
+                    "cad_physical", world_logical, false, 0);
+
+//--------------------------------------------------------------------
+
+
+  //
   // Shape 1
-  //  
+  //
   G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_A-150_TISSUE");
   G4ThreeVector pos1 = G4ThreeVector(0, 2*cm, -7*cm);
-        
-  // Conical section shape       
+
+  // Conical section shape
   G4double shape1_rmina =  0.*cm, shape1_rmaxa = 2.*cm;
   G4double shape1_rminb =  0.*cm, shape1_rmaxb = 4.*cm;
   G4double shape1_hz = 3.*cm;
   G4double shape1_phimin = 0.*deg, shape1_phimax = 360.*deg;
-  G4Cons* solidShape1 =    
-    new G4Cons("Shape1", 
+  G4Cons* solidShape1 =
+    new G4Cons("Shape1",
     shape1_rmina, shape1_rmaxa, shape1_rminb, shape1_rmaxb, shape1_hz,
     shape1_phimin, shape1_phimax);
-                      
-  G4LogicalVolume* logicShape1 =                         
+
+  G4LogicalVolume* logicShape1 =
     new G4LogicalVolume(solidShape1,         //its solid
                         shape1_mat,          //its material
                         "Shape1");           //its name
-               
+
   new G4PVPlacement(0,                       //no rotation
                     pos1,                    //at position
                     logicShape1,             //its logical volume
@@ -145,26 +167,26 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
 
-  //     
+  //
   // Shape 2
   //
   G4Material* shape2_mat = nist->FindOrBuildMaterial("G4_BONE_COMPACT_ICRU");
   G4ThreeVector pos2 = G4ThreeVector(0, -1*cm, 7*cm);
 
-  // Trapezoid shape       
+  // Trapezoid shape
   G4double shape2_dxa = 12*cm, shape2_dxb = 12*cm;
   G4double shape2_dya = 10*cm, shape2_dyb = 16*cm;
-  G4double shape2_dz  = 6*cm;      
-  G4Trd* solidShape2 =    
+  G4double shape2_dz  = 6*cm;
+  G4Trd* solidShape2 =
     new G4Trd("Shape2",                      //its name
-              0.5*shape2_dxa, 0.5*shape2_dxb, 
+              0.5*shape2_dxa, 0.5*shape2_dxb,
               0.5*shape2_dya, 0.5*shape2_dyb, 0.5*shape2_dz); //its size
-                
-  G4LogicalVolume* logicShape2 =                         
+
+  G4LogicalVolume* logicShape2 =
     new G4LogicalVolume(solidShape2,         //its solid
                         shape2_mat,          //its material
                         "Shape2");           //its name
-               
+
   new G4PVPlacement(0,                       //no rotation
                     pos2,                    //at position
                     logicShape2,             //its logical volume
@@ -173,10 +195,33 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
-                
+
   // Set Shape2 as scoring volume
   //
   fScoringVolume = logicShape2;
+
+//---CADMesh-------------------------------------------------------------------
+
+# CMakeLists.txt
+cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+project(cadmesh_example)
+
+# GEANT4 core
+find_package(Geant4 REQUIRED ui_all vis_all)
+include(${Geant4_USE_FILE})
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+# CADMesh
+find_package(cadmesh)
+
+# User code
+file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
+file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
+
+add_executable(cadmesh_example cadmesh_example.cc ${sources} ${headers})
+target_link_libraries(cadmesh_example ${Geant4_LIBRARIES})
+target_link_libraries(cadmesh_example ${cadmesh_LIBRARIES})
+//-------------------------------------------------------------------------------
 
   //
   //always return the physical World
