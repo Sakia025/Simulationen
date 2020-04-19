@@ -33,8 +33,11 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(ccbPlaque ccbPlaque.cc ${sources} ${headers})
-target_link_libraries(ccbPlaque ${Geant4_LIBRARIES})
+#add_executable(ccbPlaque ccbPlaque.cc ${sources} ${headers})
+#target_link_libraries(ccbPlaque ${Geant4_LIBRARIES})
+add_executable(exampleB3a exampleB3a.cc ${sources} ${headers})
+target_link_libraries(exampleB3a ${Geant4_LIBRARIES})
+
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we

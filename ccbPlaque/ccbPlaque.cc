@@ -19,6 +19,7 @@
 #include "DetectorConstruction.hh"
 #include "ActionInitialization.hh"
 
+//#include "/Users/smller/Simulationen/ccbPlaque/include/global_variables.hh"
 
 int main(int argc, char** argv)
 {
@@ -28,13 +29,16 @@ int main(int argc, char** argv)
     {
         ui = new G4UIExecutive(argc, argv);
     }
-
+//!!!Ändern zu Set seed über runfile!!
     G4Random::setTheEngine(new CLHEP::RanecuEngine);
     G4int seconds =  time(NULL);
     G4Random::setTheSeed(seconds);
 
+
+
 #ifdef G4MULTITHREADED
     G4MTRunManager* runManager = new G4MTRunManager;
+//!!Was sind number of threads? parallelisierung
     runManager->SetNumberOfThreads(4);
 #else
     G4RunManager* runManager = new G4RunManager;
@@ -48,14 +52,24 @@ int main(int argc, char** argv)
     visManager->Initialize();
     G4UImanager* UImanager = G4UImanager::GetUIpointer();
 
+//!! brauch ich das? kommt aus example B3a Activate score ntuple writer
+    // The Root output type (Root) is selected in B3Analysis.hh.
+    // The verbose level can be also set via UI commands
+    // /score/ntuple/writerVerbose level
+  //  G4TScoreNtupleWriter<G4AnalysisManager> scoreNtupleWriter;
+  //  scoreNtupleWriter.SetVerboseLevel(1);
+
+
     if ( !ui )
     {
+        // batch mode
         G4String command = "/control/execute ";
         G4String fileName = argv[1];
         UImanager->ApplyCommand(command + fileName);
     }
     else
     {
+        //interactive mode
         UImanager->ApplyCommand("/control/execute init_vis.mac");
         ui->SessionStart();
         delete ui;

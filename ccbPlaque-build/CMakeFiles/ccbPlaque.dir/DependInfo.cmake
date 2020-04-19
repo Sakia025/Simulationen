@@ -5,14 +5,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/smller/Simulationen/ccbPlaque/ccbPlaque.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/ccbPlaque.cc.o"
-  "/Users/smller/Simulationen/ccbPlaque/src/ActionInitialization.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/ActionInitialization.cc.o"
-  "/Users/smller/Simulationen/ccbPlaque/src/DetectorConstruction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/DetectorConstruction.cc.o"
-  "/Users/smller/Simulationen/ccbPlaque/src/EventAction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/EventAction.cc.o"
-  "/Users/smller/Simulationen/ccbPlaque/src/PhysicsList.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o"
-  "/Users/smller/Simulationen/ccbPlaque/src/PhysicsListMessenger.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o"
-  "/Users/smller/Simulationen/ccbPlaque/src/PrimaryGeneratorAction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/PrimaryGeneratorAction.cc.o"
-  "/Users/smller/Simulationen/ccbPlaque/src/RunAction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/RunAction.cc.o"
-  "/Users/smller/Simulationen/ccbPlaque/src/SteppingAction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/SteppingAction.cc.o"
+  "/Users/smller/Simulationen/ccbPlaque/src/B3DetectorConstruction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/B3DetectorConstruction.cc.o"
+  "/Users/smller/Simulationen/ccbPlaque/src/B3PhysicsList.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.o"
+  "/Users/smller/Simulationen/ccbPlaque/src/B3PrimaryGeneratorAction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.o"
+  "/Users/smller/Simulationen/ccbPlaque/src/B3StackingAction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.o"
+  "/Users/smller/Simulationen/ccbPlaque/src/B3aActionInitialization.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o"
+  "/Users/smller/Simulationen/ccbPlaque/src/B3aEventAction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.o"
+  "/Users/smller/Simulationen/ccbPlaque/src/B3aRunAction.cc" "/Users/smller/Simulationen/ccbPlaque-build/CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

@@ -77,5 +77,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/ccbPlaque.dir/DependInfo.cmake"
+  "CMakeFiles/exampleB3a.dir/DependInfo.cmake"
   )

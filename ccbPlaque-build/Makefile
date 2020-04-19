@@ -111,260 +111,233 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ccbPlaque
+# Target rules for targets named exampleB3a
 
 # Build rule for target.
-ccbPlaque: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ccbPlaque
-.PHONY : ccbPlaque
+exampleB3a: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 exampleB3a
+.PHONY : exampleB3a
 
 # fast build rule for target.
-ccbPlaque/fast:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/build
-.PHONY : ccbPlaque/fast
+exampleB3a/fast:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/build
+.PHONY : exampleB3a/fast
 
-ccbPlaque.o: ccbPlaque.cc.o
+exampleB3a.o: exampleB3a.cc.o
 
-.PHONY : ccbPlaque.o
-
-# target to build an object file
-ccbPlaque.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/ccbPlaque.cc.o
-.PHONY : ccbPlaque.cc.o
-
-ccbPlaque.i: ccbPlaque.cc.i
-
-.PHONY : ccbPlaque.i
-
-# target to preprocess a source file
-ccbPlaque.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/ccbPlaque.cc.i
-.PHONY : ccbPlaque.cc.i
-
-ccbPlaque.s: ccbPlaque.cc.s
-
-.PHONY : ccbPlaque.s
-
-# target to generate assembly for a file
-ccbPlaque.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/ccbPlaque.cc.s
-.PHONY : ccbPlaque.cc.s
-
-src/ActionInitialization.o: src/ActionInitialization.cc.o
-
-.PHONY : src/ActionInitialization.o
+.PHONY : exampleB3a.o
 
 # target to build an object file
-src/ActionInitialization.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/ActionInitialization.cc.o
-.PHONY : src/ActionInitialization.cc.o
+exampleB3a.cc.o:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/exampleB3a.cc.o
+.PHONY : exampleB3a.cc.o
 
-src/ActionInitialization.i: src/ActionInitialization.cc.i
+exampleB3a.i: exampleB3a.cc.i
 
-.PHONY : src/ActionInitialization.i
+.PHONY : exampleB3a.i
 
 # target to preprocess a source file
-src/ActionInitialization.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/ActionInitialization.cc.i
-.PHONY : src/ActionInitialization.cc.i
+exampleB3a.cc.i:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/exampleB3a.cc.i
+.PHONY : exampleB3a.cc.i
 
-src/ActionInitialization.s: src/ActionInitialization.cc.s
+exampleB3a.s: exampleB3a.cc.s
 
-.PHONY : src/ActionInitialization.s
+.PHONY : exampleB3a.s
 
 # target to generate assembly for a file
-src/ActionInitialization.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/ActionInitialization.cc.s
-.PHONY : src/ActionInitialization.cc.s
+exampleB3a.cc.s:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/exampleB3a.cc.s
+.PHONY : exampleB3a.cc.s
 
-src/DetectorConstruction.o: src/DetectorConstruction.cc.o
+src/B3DetectorConstruction.o: src/B3DetectorConstruction.cc.o
 
-.PHONY : src/DetectorConstruction.o
+.PHONY : src/B3DetectorConstruction.o
 
 # target to build an object file
-src/DetectorConstruction.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/DetectorConstruction.cc.o
-.PHONY : src/DetectorConstruction.cc.o
+src/B3DetectorConstruction.cc.o:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3DetectorConstruction.cc.o
+.PHONY : src/B3DetectorConstruction.cc.o
 
-src/DetectorConstruction.i: src/DetectorConstruction.cc.i
+src/B3DetectorConstruction.i: src/B3DetectorConstruction.cc.i
 
-.PHONY : src/DetectorConstruction.i
+.PHONY : src/B3DetectorConstruction.i
 
 # target to preprocess a source file
-src/DetectorConstruction.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/DetectorConstruction.cc.i
-.PHONY : src/DetectorConstruction.cc.i
+src/B3DetectorConstruction.cc.i:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3DetectorConstruction.cc.i
+.PHONY : src/B3DetectorConstruction.cc.i
 
-src/DetectorConstruction.s: src/DetectorConstruction.cc.s
+src/B3DetectorConstruction.s: src/B3DetectorConstruction.cc.s
 
-.PHONY : src/DetectorConstruction.s
+.PHONY : src/B3DetectorConstruction.s
 
 # target to generate assembly for a file
-src/DetectorConstruction.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/DetectorConstruction.cc.s
-.PHONY : src/DetectorConstruction.cc.s
+src/B3DetectorConstruction.cc.s:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3DetectorConstruction.cc.s
+.PHONY : src/B3DetectorConstruction.cc.s
 
-src/EventAction.o: src/EventAction.cc.o
+src/B3PhysicsList.o: src/B3PhysicsList.cc.o
 
-.PHONY : src/EventAction.o
+.PHONY : src/B3PhysicsList.o
 
 # target to build an object file
-src/EventAction.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/EventAction.cc.o
-.PHONY : src/EventAction.cc.o
+src/B3PhysicsList.cc.o:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3PhysicsList.cc.o
+.PHONY : src/B3PhysicsList.cc.o
 
-src/EventAction.i: src/EventAction.cc.i
+src/B3PhysicsList.i: src/B3PhysicsList.cc.i
 
-.PHONY : src/EventAction.i
+.PHONY : src/B3PhysicsList.i
 
 # target to preprocess a source file
-src/EventAction.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/EventAction.cc.i
-.PHONY : src/EventAction.cc.i
+src/B3PhysicsList.cc.i:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3PhysicsList.cc.i
+.PHONY : src/B3PhysicsList.cc.i
 
-src/EventAction.s: src/EventAction.cc.s
+src/B3PhysicsList.s: src/B3PhysicsList.cc.s
 
-.PHONY : src/EventAction.s
+.PHONY : src/B3PhysicsList.s
 
 # target to generate assembly for a file
-src/EventAction.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/EventAction.cc.s
-.PHONY : src/EventAction.cc.s
+src/B3PhysicsList.cc.s:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3PhysicsList.cc.s
+.PHONY : src/B3PhysicsList.cc.s
 
-src/PhysicsList.o: src/PhysicsList.cc.o
+src/B3PrimaryGeneratorAction.o: src/B3PrimaryGeneratorAction.cc.o
 
-.PHONY : src/PhysicsList.o
+.PHONY : src/B3PrimaryGeneratorAction.o
 
 # target to build an object file
-src/PhysicsList.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o
-.PHONY : src/PhysicsList.cc.o
+src/B3PrimaryGeneratorAction.cc.o:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3PrimaryGeneratorAction.cc.o
+.PHONY : src/B3PrimaryGeneratorAction.cc.o
 
-src/PhysicsList.i: src/PhysicsList.cc.i
+src/B3PrimaryGeneratorAction.i: src/B3PrimaryGeneratorAction.cc.i
 
-.PHONY : src/PhysicsList.i
+.PHONY : src/B3PrimaryGeneratorAction.i
 
 # target to preprocess a source file
-src/PhysicsList.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.i
-.PHONY : src/PhysicsList.cc.i
+src/B3PrimaryGeneratorAction.cc.i:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3PrimaryGeneratorAction.cc.i
+.PHONY : src/B3PrimaryGeneratorAction.cc.i
 
-src/PhysicsList.s: src/PhysicsList.cc.s
+src/B3PrimaryGeneratorAction.s: src/B3PrimaryGeneratorAction.cc.s
 
-.PHONY : src/PhysicsList.s
+.PHONY : src/B3PrimaryGeneratorAction.s
 
 # target to generate assembly for a file
-src/PhysicsList.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.s
-.PHONY : src/PhysicsList.cc.s
+src/B3PrimaryGeneratorAction.cc.s:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3PrimaryGeneratorAction.cc.s
+.PHONY : src/B3PrimaryGeneratorAction.cc.s
 
-src/PhysicsListMessenger.o: src/PhysicsListMessenger.cc.o
+src/B3StackingAction.o: src/B3StackingAction.cc.o
 
-.PHONY : src/PhysicsListMessenger.o
+.PHONY : src/B3StackingAction.o
 
 # target to build an object file
-src/PhysicsListMessenger.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o
-.PHONY : src/PhysicsListMessenger.cc.o
+src/B3StackingAction.cc.o:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3StackingAction.cc.o
+.PHONY : src/B3StackingAction.cc.o
 
-src/PhysicsListMessenger.i: src/PhysicsListMessenger.cc.i
+src/B3StackingAction.i: src/B3StackingAction.cc.i
 
-.PHONY : src/PhysicsListMessenger.i
+.PHONY : src/B3StackingAction.i
 
 # target to preprocess a source file
-src/PhysicsListMessenger.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.i
-.PHONY : src/PhysicsListMessenger.cc.i
+src/B3StackingAction.cc.i:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3StackingAction.cc.i
+.PHONY : src/B3StackingAction.cc.i
 
-src/PhysicsListMessenger.s: src/PhysicsListMessenger.cc.s
+src/B3StackingAction.s: src/B3StackingAction.cc.s
 
-.PHONY : src/PhysicsListMessenger.s
+.PHONY : src/B3StackingAction.s
 
 # target to generate assembly for a file
-src/PhysicsListMessenger.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.s
-.PHONY : src/PhysicsListMessenger.cc.s
+src/B3StackingAction.cc.s:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3StackingAction.cc.s
+.PHONY : src/B3StackingAction.cc.s
 
-src/PrimaryGeneratorAction.o: src/PrimaryGeneratorAction.cc.o
+src/B3aActionInitialization.o: src/B3aActionInitialization.cc.o
 
-.PHONY : src/PrimaryGeneratorAction.o
+.PHONY : src/B3aActionInitialization.o
 
 # target to build an object file
-src/PrimaryGeneratorAction.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PrimaryGeneratorAction.cc.o
-.PHONY : src/PrimaryGeneratorAction.cc.o
+src/B3aActionInitialization.cc.o:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aActionInitialization.cc.o
+.PHONY : src/B3aActionInitialization.cc.o
 
-src/PrimaryGeneratorAction.i: src/PrimaryGeneratorAction.cc.i
+src/B3aActionInitialization.i: src/B3aActionInitialization.cc.i
 
-.PHONY : src/PrimaryGeneratorAction.i
+.PHONY : src/B3aActionInitialization.i
 
 # target to preprocess a source file
-src/PrimaryGeneratorAction.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PrimaryGeneratorAction.cc.i
-.PHONY : src/PrimaryGeneratorAction.cc.i
+src/B3aActionInitialization.cc.i:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aActionInitialization.cc.i
+.PHONY : src/B3aActionInitialization.cc.i
 
-src/PrimaryGeneratorAction.s: src/PrimaryGeneratorAction.cc.s
+src/B3aActionInitialization.s: src/B3aActionInitialization.cc.s
 
-.PHONY : src/PrimaryGeneratorAction.s
+.PHONY : src/B3aActionInitialization.s
 
 # target to generate assembly for a file
-src/PrimaryGeneratorAction.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/PrimaryGeneratorAction.cc.s
-.PHONY : src/PrimaryGeneratorAction.cc.s
+src/B3aActionInitialization.cc.s:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aActionInitialization.cc.s
+.PHONY : src/B3aActionInitialization.cc.s
 
-src/RunAction.o: src/RunAction.cc.o
+src/B3aEventAction.o: src/B3aEventAction.cc.o
 
-.PHONY : src/RunAction.o
+.PHONY : src/B3aEventAction.o
 
 # target to build an object file
-src/RunAction.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/RunAction.cc.o
-.PHONY : src/RunAction.cc.o
+src/B3aEventAction.cc.o:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aEventAction.cc.o
+.PHONY : src/B3aEventAction.cc.o
 
-src/RunAction.i: src/RunAction.cc.i
+src/B3aEventAction.i: src/B3aEventAction.cc.i
 
-.PHONY : src/RunAction.i
+.PHONY : src/B3aEventAction.i
 
 # target to preprocess a source file
-src/RunAction.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/RunAction.cc.i
-.PHONY : src/RunAction.cc.i
+src/B3aEventAction.cc.i:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aEventAction.cc.i
+.PHONY : src/B3aEventAction.cc.i
 
-src/RunAction.s: src/RunAction.cc.s
+src/B3aEventAction.s: src/B3aEventAction.cc.s
 
-.PHONY : src/RunAction.s
+.PHONY : src/B3aEventAction.s
 
 # target to generate assembly for a file
-src/RunAction.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/RunAction.cc.s
-.PHONY : src/RunAction.cc.s
+src/B3aEventAction.cc.s:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aEventAction.cc.s
+.PHONY : src/B3aEventAction.cc.s
 
-src/SteppingAction.o: src/SteppingAction.cc.o
+src/B3aRunAction.o: src/B3aRunAction.cc.o
 
-.PHONY : src/SteppingAction.o
+.PHONY : src/B3aRunAction.o
 
 # target to build an object file
-src/SteppingAction.cc.o:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/SteppingAction.cc.o
-.PHONY : src/SteppingAction.cc.o
+src/B3aRunAction.cc.o:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aRunAction.cc.o
+.PHONY : src/B3aRunAction.cc.o
 
-src/SteppingAction.i: src/SteppingAction.cc.i
+src/B3aRunAction.i: src/B3aRunAction.cc.i
 
-.PHONY : src/SteppingAction.i
+.PHONY : src/B3aRunAction.i
 
 # target to preprocess a source file
-src/SteppingAction.cc.i:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/SteppingAction.cc.i
-.PHONY : src/SteppingAction.cc.i
+src/B3aRunAction.cc.i:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aRunAction.cc.i
+.PHONY : src/B3aRunAction.cc.i
 
-src/SteppingAction.s: src/SteppingAction.cc.s
+src/B3aRunAction.s: src/B3aRunAction.cc.s
 
-.PHONY : src/SteppingAction.s
+.PHONY : src/B3aRunAction.s
 
 # target to generate assembly for a file
-src/SteppingAction.cc.s:
-	$(MAKE) -f CMakeFiles/ccbPlaque.dir/build.make CMakeFiles/ccbPlaque.dir/src/SteppingAction.cc.s
-.PHONY : src/SteppingAction.cc.s
+src/B3aRunAction.cc.s:
+	$(MAKE) -f CMakeFiles/exampleB3a.dir/build.make CMakeFiles/exampleB3a.dir/src/B3aRunAction.cc.s
+.PHONY : src/B3aRunAction.cc.s
 
 # Help Target
 help:
@@ -374,34 +347,31 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ccbPlaque"
-	@echo "... ccbPlaque.o"
-	@echo "... ccbPlaque.i"
-	@echo "... ccbPlaque.s"
-	@echo "... src/ActionInitialization.o"
-	@echo "... src/ActionInitialization.i"
-	@echo "... src/ActionInitialization.s"
-	@echo "... src/DetectorConstruction.o"
-	@echo "... src/DetectorConstruction.i"
-	@echo "... src/DetectorConstruction.s"
-	@echo "... src/EventAction.o"
-	@echo "... src/EventAction.i"
-	@echo "... src/EventAction.s"
-	@echo "... src/PhysicsList.o"
-	@echo "... src/PhysicsList.i"
-	@echo "... src/PhysicsList.s"
-	@echo "... src/PhysicsListMessenger.o"
-	@echo "... src/PhysicsListMessenger.i"
-	@echo "... src/PhysicsListMessenger.s"
-	@echo "... src/PrimaryGeneratorAction.o"
-	@echo "... src/PrimaryGeneratorAction.i"
-	@echo "... src/PrimaryGeneratorAction.s"
-	@echo "... src/RunAction.o"
-	@echo "... src/RunAction.i"
-	@echo "... src/RunAction.s"
-	@echo "... src/SteppingAction.o"
-	@echo "... src/SteppingAction.i"
-	@echo "... src/SteppingAction.s"
+	@echo "... exampleB3a"
+	@echo "... exampleB3a.o"
+	@echo "... exampleB3a.i"
+	@echo "... exampleB3a.s"
+	@echo "... src/B3DetectorConstruction.o"
+	@echo "... src/B3DetectorConstruction.i"
+	@echo "... src/B3DetectorConstruction.s"
+	@echo "... src/B3PhysicsList.o"
+	@echo "... src/B3PhysicsList.i"
+	@echo "... src/B3PhysicsList.s"
+	@echo "... src/B3PrimaryGeneratorAction.o"
+	@echo "... src/B3PrimaryGeneratorAction.i"
+	@echo "... src/B3PrimaryGeneratorAction.s"
+	@echo "... src/B3StackingAction.o"
+	@echo "... src/B3StackingAction.i"
+	@echo "... src/B3StackingAction.s"
+	@echo "... src/B3aActionInitialization.o"
+	@echo "... src/B3aActionInitialization.i"
+	@echo "... src/B3aActionInitialization.s"
+	@echo "... src/B3aEventAction.o"
+	@echo "... src/B3aEventAction.i"
+	@echo "... src/B3aEventAction.s"
+	@echo "... src/B3aRunAction.o"
+	@echo "... src/B3aRunAction.i"
+	@echo "... src/B3aRunAction.s"
 .PHONY : help
 
 
