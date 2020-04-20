@@ -65,31 +65,13 @@ int main(int argc,char** argv)
     ui = new G4UIExecutive(argc, argv);
   }
 
-
-  //Modelle einlesen
-/*  struct dirent *de;  // Pointer for directory entry
-
-  // opendir() returns a pointer of DIR type.
-  DIR *dr = opendir("/Users/smller/Simulationen/ccbPlaque/models/");
-
-  if (dr == NULL)  // opendir returns NULL if couldn't open directory
-  {
-    G4cout << ("Could not open current directory") << G4endl;
-    return 0;
-  }
-  std::vector<std::string> model_names;
-  while ((de = readdir(dr)) != NULL){
-    if(strstr(de->d_name,".stl") != NULL)
-    {
-        model_names.push_back(de->d_name);
-    }
-  }
-  //std::vector<int> model_names_test(5, 0);
-  //std::vector<int>* model_names_ptr = &model_names_test;
-  //G4cout << model_names_ptr->size() << G4endl;
-  closedir(dr);
+/*
+  //aus ccbPlaque.cc
+  //!!!Ändern zu Set seed über runfile!!
+      G4Random::setTheEngine(new CLHEP::RanecuEngine);
+      G4int seconds =  time(NULL);
+      G4Random::setTheSeed(seconds);
 */
-  //Model einlesen Ende
 
 
   // Optionally: choose a different Random engine...
@@ -100,6 +82,9 @@ int main(int argc,char** argv)
   //
 #ifdef G4MULTITHREADED
   G4MTRunManager* runManager = new G4MTRunManager;
+  //!!Was sind number of threads? parallelisierung
+  //aus ccbPlaque
+  // runManager->SetNumberOfThreads(4);
 #else
   G4RunManager* runManager = new G4RunManager;
 #endif
@@ -128,8 +113,11 @@ int main(int argc,char** argv)
   // The Root output type (Root) is selected in B3Analysis.hh.
   // The verbose level can be also set via UI commands
   // /score/ntuple/writerVerbose level
+  // brauch ich das?
+  /*
   G4TScoreNtupleWriter<G4AnalysisManager> scoreNtupleWriter;
   scoreNtupleWriter.SetVerboseLevel(1);
+  */
 
   // Process macro or start UI session
   //
