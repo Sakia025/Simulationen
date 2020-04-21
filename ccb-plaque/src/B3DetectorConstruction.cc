@@ -144,7 +144,7 @@ void B3DetectorConstruction::DefineMaterials()
   G4Material* H2O = new G4Material(name = "H2O", density = 0.998*g/cm3, ncomponents = 3);
   H2O->AddElement(hydrogen,2);
   H2O->AddElement(oxygen,1);
-/*
+
   G4Material* bicarbonate = new G4Material(name = "bicarbonate", density = 1.67*g/cm3, ncomponents = 3);
   bicarbonate->AddElement(hydrogen,1);
   bicarbonate->AddElement(oxygen,3);
@@ -540,7 +540,7 @@ G4Material* netzhaut= new G4Material(name = "netzhaut", density = 1.008*g/cm3, n
  //hier stand in der .py Datei state = solid, weiß nicht, ob das wichtig ist
  G4Material* ruthenium = new G4Material(name = "ruthenium", density = 12.36*g/cm3, ncomponents = 1, state = kStateSolid);
   ruthenium->AddElement(element =Ru, fractionmass =1.*100*perCent);
-*/
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -627,11 +627,11 @@ G4VPhysicalVolume* B3DetectorConstruction::Construct()
         for(unsigned int i = 0; i < model_names.size(); i++)
         {
            //construct Logical Volumes from .stl files via CADMeesh 2.0
-            //logical_material = B3DetectorConstruction::MatchMaterialToSTL(model_names[i]);
+            logical_material = B3DetectorConstruction::MatchMaterialToSTL(model_names[i]);
             model_mesh_vector.push_back(CADMesh::TessellatedMesh::FromSTL("../ccbPlaque/models/"+ model_names[i]));
             model_logical_vector.push_back(new G4LogicalVolume(model_mesh_vector[i]->GetSolid()
-                                                //, logical_material
-                                                , myWater
+                                                , logical_material
+                                                //, myWater
                                                 , "logical"
                                                 , 0, 0, 0));
 

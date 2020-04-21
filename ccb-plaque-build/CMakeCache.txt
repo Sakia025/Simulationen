@@ -751,7 +751,7 @@ QT_QTTEST_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/QtTest.framework
 QT_QTUITOOLS_INCLUDE_DIR:PATH=/usr/local/include/QtUiTools
 
 //The Qt QTUITOOLS library
-QT_QTUITOOLS_LIBRARY:STRING=optimized;/usr/local/lib/libQtUiTools.a;debug;/usr/local/lib/libQtUiTools_debug.a
+QT_QTUITOOLS_LIBRARY:STRING=/usr/local/lib/libQtUiTools.a
 
 //Path to a library.
 QT_QTUITOOLS_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libQtUiTools_debug.a
