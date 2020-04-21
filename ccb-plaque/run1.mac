@@ -1,5 +1,5 @@
-#/ccb/phys/addPhysics emstandard_opt0
-/ccb/phys/addPhysics emstandard_opt4
+/ccb/phys/addPhysics emstandard_opt0
+#/ccb/phys/addPhysics emstandard_opt4
 #/ccb/phys/addPhysics emstandardSS
 #/ccb/phys/addPhysics emstandardWVI
 #/ccb/phys/addPhysics emstandardGS
@@ -15,4 +15,4 @@
 
 
 
-/run/beamOn 10000
+#/run/beamOn 100
