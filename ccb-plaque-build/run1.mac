@@ -1,5 +1,5 @@
-#/ccb/phys/addPhysics emstandard_opt0
-/ccb/phys/addPhysics emstandard_opt4
+/ccb/phys/addPhysics emstandard_opt0
+#/ccb/phys/addPhysics emstandard_opt4
 #/ccb/phys/addPhysics emstandardSS
 #/ccb/phys/addPhysics emstandardWVI
 #/ccb/phys/addPhysics emstandardGS
@@ -24,6 +24,9 @@
 /gps/pos/centre 0. 0. 0.1 mm          #gucken, ob z= 0.1 bei mir auch richtig ist
 /gps/ang/type iso
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fb0d18a5eb9d05b774a8ea3e47566ebaadda0187
 #/run/beamOn 100

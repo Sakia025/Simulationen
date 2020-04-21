@@ -4,7 +4,7 @@
 
 #IncludeRegexComplain: ^$
 
-#IncludeRegexTransform: 
+#IncludeRegexTransform:
 
 /Users/smller/Simulationen/ccb-plaque/include/B3PrimaryGeneratorAction.hh
 G4VUserPrimaryGeneratorAction.hh
@@ -854,14 +854,6 @@ G4Exp.hh
 G4Threading.hh
 /Users/smller/geant4.10.06-install/include/Geant4/G4Threading.hh
 
-/Users/smller/geant4.10.06-install/include/Geant4/G4Ions.hh
-globals.hh
-/Users/smller/geant4.10.06-install/include/Geant4/globals.hh
-G4ios.hh
-/Users/smller/geant4.10.06-install/include/Geant4/G4ios.hh
-G4ParticleDefinition.hh
-/Users/smller/geant4.10.06-install/include/Geant4/G4ParticleDefinition.hh
-
 /Users/smller/geant4.10.06-install/include/Geant4/G4Isotope.hh
 globals.hh
 /Users/smller/geant4.10.06-install/include/Geant4/globals.hh
@@ -1179,20 +1171,6 @@ G4ParticleDefinition.icc
 /Users/smller/geant4.10.06-install/include/Geant4/G4ParticleDefinition.icc
 
 /Users/smller/geant4.10.06-install/include/Geant4/G4ParticleDefinition.icc
-
-/Users/smller/geant4.10.06-install/include/Geant4/G4ParticleGun.hh
-globals.hh
-/Users/smller/geant4.10.06-install/include/Geant4/globals.hh
-G4VPrimaryGenerator.hh
-/Users/smller/geant4.10.06-install/include/Geant4/G4VPrimaryGenerator.hh
-G4ThreeVector.hh
-/Users/smller/geant4.10.06-install/include/Geant4/G4ThreeVector.hh
-G4ParticleDefinition.hh
-/Users/smller/geant4.10.06-install/include/Geant4/G4ParticleDefinition.hh
-G4PrimaryVertex.hh
-/Users/smller/geant4.10.06-install/include/Geant4/G4PrimaryVertex.hh
-G4ParticleMomentum.hh
-/Users/smller/geant4.10.06-install/include/Geant4/G4ParticleMomentum.hh
 
 /Users/smller/geant4.10.06-install/include/Geant4/G4ParticleMomentum.hh
 G4ThreeVector.hh
@@ -2175,4 +2153,3 @@ G4GlobalConfig.hh
 /Users/smller/geant4.10.06-install/include/Geant4/trkdefs.hh
 G4Types.hh
 /Users/smller/geant4.10.06-install/include/Geant4/G4Types.hh
-
