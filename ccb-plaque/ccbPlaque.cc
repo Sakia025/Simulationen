@@ -54,6 +54,7 @@ int main(int argc, char** argv)
     {
         G4String command = "/control/execute ";
         G4String fileName = argv[1];
+        std::cout << 'd' << std::endl;
         UImanager->ApplyCommand(command + fileName);
         std::cout << 'e' << std::endl;
         UImanager->ApplyCommand("/run/beamOn 100");
