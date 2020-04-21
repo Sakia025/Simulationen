@@ -55,7 +55,7 @@ class B3DetectorConstruction : public G4VUserDetectorConstruction
 
   private:
     void DefineMaterials();
-    G4Material* MatchMaterialToSTL(std::string model_name);
+    //G4Material* MatchMaterialToSTL(std::string model_name);
 
     G4bool  fCheckOverlaps;
 };

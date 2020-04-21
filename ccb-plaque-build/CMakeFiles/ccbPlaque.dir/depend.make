@@ -1091,6 +1091,7 @@ CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/geant4.
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VExceptionHandler.hh
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VPrimaryGenerator.hh
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VUserActionInitialization.hh
+CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4ios.hh
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/globals.hh
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/pwdefs.hh
@@ -1613,6 +1614,7 @@ CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/geant4.10.06-insta
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VTouchable.icc
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VTrajectory.hh
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VUserEventInformation.hh
+CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VUserTrackInformation.hh
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VVolumeMaterialScanner.hh
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/geant4.10.06-install/include/Geant4/G4VoxelNavigation.hh

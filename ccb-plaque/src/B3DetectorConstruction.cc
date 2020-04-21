@@ -100,7 +100,7 @@ void B3DetectorConstruction::DefineMaterials()
   LSO->AddElement(O , 5);
 
 
-
+/*
 
   G4NistManager* nist = G4NistManager::Instance();
 
@@ -540,7 +540,7 @@ G4Material* netzhaut= new G4Material(name = "netzhaut", density = 1.008*g/cm3, n
  //hier stand in der .py Datei state = solid, weiß nicht, ob das wichtig ist
  G4Material* ruthenium = new G4Material(name = "ruthenium", density = 12.36*g/cm3, ncomponents = 1, state = kStateSolid);
   ruthenium->AddElement(element =Ru, fractionmass =1. );
-
+*/
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -627,11 +627,11 @@ G4VPhysicalVolume* B3DetectorConstruction::Construct()
         for(unsigned int i = 0; i < model_names.size(); i++)
         {
            //construct Logical Volumes from .stl files via CADMeesh 2.0
-            logical_material = B3DetectorConstruction::MatchMaterialToSTL(model_names[i]);
+            //logical_material = B3DetectorConstruction::MatchMaterialToSTL(model_names[i]);
             model_mesh_vector.push_back(CADMesh::TessellatedMesh::FromSTL("../ccbPlaque/models/"+ model_names[i]));
             model_logical_vector.push_back(new G4LogicalVolume(model_mesh_vector[i]->GetSolid()
-                                                , logical_material
-                                                //, myWater
+                                                //, logical_material
+                                                , myWater
                                                 , "logical"
                                                 , 0, 0, 0));
 
@@ -708,7 +708,7 @@ void B3DetectorConstruction::ConstructSDandField()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-
+/*
 G4Material* B3DetectorConstruction::MatchMaterialToSTL(std::string model_name)
 {
     G4NistManager* nist = G4NistManager::Instance();
@@ -733,3 +733,4 @@ G4Material* B3DetectorConstruction::MatchMaterialToSTL(std::string model_name)
     }
     return model_material;
 }
+*/
