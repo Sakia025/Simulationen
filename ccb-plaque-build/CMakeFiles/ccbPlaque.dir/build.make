@@ -83,22 +83,9 @@ CMakeFiles/ccbPlaque.dir/src/B3DetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ccbPlaque.dir/src/B3DetectorConstruction.cc.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/smller/Simulationen/ccb-plaque/src/B3DetectorConstruction.cc -o CMakeFiles/ccbPlaque.dir/src/B3DetectorConstruction.cc.s
 
-CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.o: CMakeFiles/ccbPlaque.dir/flags.make
-CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.o: /Users/smller/Simulationen/ccb-plaque/src/B3PhysicsList.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.o -c /Users/smller/Simulationen/ccb-plaque/src/B3PhysicsList.cc
-
-CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/smller/Simulationen/ccb-plaque/src/B3PhysicsList.cc > CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.i
-
-CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/smller/Simulationen/ccb-plaque/src/B3PhysicsList.cc -o CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.s
-
 CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.o: CMakeFiles/ccbPlaque.dir/flags.make
 CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.o: /Users/smller/Simulationen/ccb-plaque/src/B3PrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.o -c /Users/smller/Simulationen/ccb-plaque/src/B3PrimaryGeneratorAction.cc
 
 CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.s: cmake_force
 
 CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.o: CMakeFiles/ccbPlaque.dir/flags.make
 CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.o: /Users/smller/Simulationen/ccb-plaque/src/B3StackingAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.o -c /Users/smller/Simulationen/ccb-plaque/src/B3StackingAction.cc
 
 CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.s: cmake_force
 
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: CMakeFiles/ccbPlaque.dir/flags.make
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o: /Users/smller/Simulationen/ccb-plaque/src/B3aActionInitialization.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o -c /Users/smller/Simulationen/ccb-plaque/src/B3aActionInitialization.cc
 
 CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.s: cmake_force
 
 CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.o: CMakeFiles/ccbPlaque.dir/flags.make
 CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.o: /Users/smller/Simulationen/ccb-plaque/src/B3aEventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.o -c /Users/smller/Simulationen/ccb-plaque/src/B3aEventAction.cc
 
 CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.i: cmake_force
@@ -150,7 +137,7 @@ CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.s: cmake_force
 
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: CMakeFiles/ccbPlaque.dir/flags.make
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o: /Users/smller/Simulationen/ccb-plaque/src/B3aRunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o -c /Users/smller/Simulationen/ccb-plaque/src/B3aRunAction.cc
 
 CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.i: cmake_force
@@ -161,28 +148,56 @@ CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/smller/Simulationen/ccb-plaque/src/B3aRunAction.cc -o CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.s
 
+CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o: CMakeFiles/ccbPlaque.dir/flags.make
+CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o: /Users/smller/Simulationen/ccb-plaque/src/PhysicsList.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o -c /Users/smller/Simulationen/ccb-plaque/src/PhysicsList.cc
+
+CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/smller/Simulationen/ccb-plaque/src/PhysicsList.cc > CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.i
+
+CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/smller/Simulationen/ccb-plaque/src/PhysicsList.cc -o CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.s
+
+CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o: CMakeFiles/ccbPlaque.dir/flags.make
+CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o: /Users/smller/Simulationen/ccb-plaque/src/PhysicsListMessenger.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o -c /Users/smller/Simulationen/ccb-plaque/src/PhysicsListMessenger.cc
+
+CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/smller/Simulationen/ccb-plaque/src/PhysicsListMessenger.cc > CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.i
+
+CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/smller/Simulationen/ccb-plaque/src/PhysicsListMessenger.cc -o CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.s
+
 # Object files for target ccbPlaque
 ccbPlaque_OBJECTS = \
 "CMakeFiles/ccbPlaque.dir/ccbPlaque.cc.o" \
 "CMakeFiles/ccbPlaque.dir/src/B3DetectorConstruction.cc.o" \
-"CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.o" \
 "CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.o" \
 "CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.o" \
 "CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o" \
 "CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.o" \
-"CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o"
+"CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o" \
+"CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o" \
+"CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o"
 
 # External object files for target ccbPlaque
 ccbPlaque_EXTERNAL_OBJECTS =
 
 ccbPlaque: CMakeFiles/ccbPlaque.dir/ccbPlaque.cc.o
 ccbPlaque: CMakeFiles/ccbPlaque.dir/src/B3DetectorConstruction.cc.o
-ccbPlaque: CMakeFiles/ccbPlaque.dir/src/B3PhysicsList.cc.o
 ccbPlaque: CMakeFiles/ccbPlaque.dir/src/B3PrimaryGeneratorAction.cc.o
 ccbPlaque: CMakeFiles/ccbPlaque.dir/src/B3StackingAction.cc.o
 ccbPlaque: CMakeFiles/ccbPlaque.dir/src/B3aActionInitialization.cc.o
 ccbPlaque: CMakeFiles/ccbPlaque.dir/src/B3aEventAction.cc.o
 ccbPlaque: CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o
+ccbPlaque: CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o
+ccbPlaque: CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o
 ccbPlaque: CMakeFiles/ccbPlaque.dir/build.make
 ccbPlaque: /Users/smller/geant4.10.06-install/lib/libG4Tree.dylib
 ccbPlaque: /Users/smller/geant4.10.06-install/lib/libG4GMocren.dylib
@@ -223,7 +238,7 @@ ccbPlaque: /Users/smller/geant4.10.06-install/lib/libG4intercoms.dylib
 ccbPlaque: /Users/smller/geant4.10.06-install/lib/libG4global.dylib
 ccbPlaque: /Users/smller/geant4.10.06-install/lib/libG4clhep.dylib
 ccbPlaque: CMakeFiles/ccbPlaque.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ccbPlaque"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/smller/Simulationen/ccb-plaque-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ccbPlaque"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ccbPlaque.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

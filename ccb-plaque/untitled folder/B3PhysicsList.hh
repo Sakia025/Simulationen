@@ -30,7 +30,9 @@
 #ifndef B3PhysicsList_h
 #define B3PhysicsList_h 1
 
-#include "G4VModularPhysicsList.hh"
+#include "G4VModularPhysicsList.hh
+//vorher nicht da
+#include "globals.hh"
 
 /// Modular physics list
 ///
@@ -51,4 +53,3 @@ public:
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif
-
