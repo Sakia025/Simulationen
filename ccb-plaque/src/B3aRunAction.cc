@@ -141,6 +141,7 @@ void B3aRunAction::EndOfRunAction(const G4Run* run)
      << "OOOOOooooOOOOOooooooOOOOOooooooOOOOOooooOOOOOOoooooOOOOOOoooooOOO" << G4endl
      << "Dose in one example eyepart : " << G4BestUnit(fSumDose_eyeparts[0].GetValue(),"Dose")
      << G4endl;
+  std::cout << "Dose in one example eyepart : " << G4BestUnit(fSumDose_eyeparts[0].GetValue(),"Dose") << std::endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
