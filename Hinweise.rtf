@@ -6,9 +6,9 @@
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 Hinweise:\
-Mein Programm ist ccb-Plaque, nicht ccbPlaque. Letzteres darf ich nicht verschieben, da CADMesh noch dar\'fcber initialisiert ist (\'e4ndere ich demn\'e4chst mal)\
+Mein Programm ist ccb-Plaque, nicht ccbPlaque. \
 Das ein Hase in Geant4 angezeigt wird anstatt eines Auges liegt daran, dass das Auge ne Weile braucht um geladen zu werden und der Hase nur als schnelleres Beispiel dient.\
-Die Warnings im Terminal zu den Materialen sind egal, sie entstehen, da am Ende der Funktion ADDMaterial gepr\'fcft wird, was die gesamte Fractionmass ist, Allerdings wird danach noch mit ADDElement weitere Fractionmass hinzugef\'fcgt.\
+\
 Damit das Programm laufen kann muss CADMEsh 2.0 installiert werden, \
 meine CADMesh.hh Datei aus dem src Ordner gel\'f6scht werden und durch die eigene ersetzt werden\
-Der problematische Befehl /run/beamOn wird nicht in der run1.mac durchgef\'fchrt sondern steht separat in der ccbPlaque.cc Datei.}
+In DetectionConstructor muss der Pfadname des ModellOrdners eventuell angepasst werden}
