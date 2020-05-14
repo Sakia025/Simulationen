@@ -23,42 +23,37 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
+/// \file electromagnetic/TestEm2/include/RunActionMessenger.hh
+/// \brief Definition of the RunActionMessenger class
 //
-/// \file B3DetectorConstruction.hh
-/// \brief Definition of the B3DetectorConstruction class
+//
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef B3DetectorConstruction_h
-#define B3DetectorConstruction_h 1
+#ifndef RunActionMessenger_h
+#define RunActionMessenger_h 1
 
-#include "G4VUserDetectorConstruction.hh"
 #include "globals.hh"
-#include "meine_globalen_Variablen.hh"
-//brauchte ccb-Plaque nicht, irgendwas stimmt nicht
-#include "G4Material.hh"
-#include <string>
-#include <vector>
+#include "G4UImessenger.hh"
 
-class G4VPhysicalVolume;
-class G4LogicalVolume;
-
-/// Detector construction class to define materials and geometry.
+class B3aRunAction;
+class G4UIdirectory;
+class G4UIcmdWithAString;
 
 
-class B3DetectorConstruction : public G4VUserDetectorConstruction, meine_globalen_Variablen
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+class RunActionMessenger: public G4UImessenger
 {
-  public:
-    B3DetectorConstruction();
-    virtual ~B3DetectorConstruction();
+public:
+  RunActionMessenger(B3aRunAction*);
+  virtual ~RunActionMessenger();
 
-  public:
-    virtual G4VPhysicalVolume* Construct();
-    static std::vector<std::string> readStlFilenames();
+  virtual void SetNewValue(G4UIcommand*, G4String);
 
-  private:
-    void DefineMaterials();
-    G4Material* MatchMaterialToSTL(std::string model_name);
-
-    G4bool  fCheckOverlaps;
+private:
+	B3aRunAction*            fRun;
+ 	G4UIcmdWithAString*   fHFileCmd;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

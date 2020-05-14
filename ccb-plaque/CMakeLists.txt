@@ -43,7 +43,8 @@ target_link_libraries(ccbPlaque ${Geant4_LIBRARIES})
 #
 set(CCBPLAQUE_SCRIPTS
   init_vis.mac
-  run1.mac
+  vis.mac
+  #run_1.mac
   )
 
 foreach(_script ${CCBPLAQUE_SCRIPTS})

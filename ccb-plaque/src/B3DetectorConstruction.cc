@@ -48,6 +48,8 @@
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 
+#include "meine_globalen_Variablen.hh"
+
 // CADMESH //
 //#define CADMESH_LEXER_VERBOSE
 #include "CADMesh.hh"
@@ -64,10 +66,9 @@
 
 
 
-//int idontknow = -1;
-//must be here, its global!
-std::vector<std::string> model_names;
-//G4cout << idontknow << G4endl;
+
+std::vector<std::string> meine_globalen_Variablen::model_names_ = B3DetectorConstruction::readStlFilenames();
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B3DetectorConstruction::B3DetectorConstruction()
@@ -83,7 +84,7 @@ B3DetectorConstruction::~B3DetectorConstruction()
 { }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
+//Materialiendefinition
 void B3DetectorConstruction::DefineMaterials()
 {
   G4NistManager* man = G4NistManager::Instance();
@@ -100,7 +101,7 @@ void B3DetectorConstruction::DefineMaterials()
   LSO->AddElement(O , 5);
 
 
-/*
+
 
   G4NistManager* nist = G4NistManager::Instance();
 
@@ -141,10 +142,12 @@ void B3DetectorConstruction::DefineMaterials()
   //Eye Materials including Aminosäuren und Zucker und co
   //G4Material* Water = nist->FindOrBuildMaterial("G4_WATER");
 
-  G4Material* H2O = new G4Material(name = "H2O", density = 0.998*g/cm3, ncomponents = 3);
-  H2O->AddElement(hydrogen,2);
-  H2O->AddElement(oxygen,1);
-
+  G4Material* myWater = nist->FindOrBuildMaterial("G4_WATER");
+/* Macht das /runbeam kaputt aber warum? weil es vlt schon definiert ist?
+  G4Material* HzweiO = new G4Material(name = "HzweiO", density = 0.998*g/cm3, ncomponents = 2);
+  HzweiO->AddElement(hydrogen,2);
+  HzweiO->AddElement(oxygen,1);
+*/
   G4Material* bicarbonate = new G4Material(name = "bicarbonate", density = 1.67*g/cm3, ncomponents = 3);
   bicarbonate->AddElement(hydrogen,1);
   bicarbonate->AddElement(oxygen,3);
@@ -431,7 +434,7 @@ G4Material* skin= new G4Material(name = "skin", density = 1.09*g/cm3, ncomponent
 
 
 G4Material* aqueoushumor= new G4Material(name = "aqueoushumor ", density = 1.00*g/cm3, ncomponents = 17);
- aqueoushumor->AddMaterial(material =H2O , fractionmass =0.98687 );
+ aqueoushumor->AddMaterial(material =myWater , fractionmass =0.98687 );
  aqueoushumor->AddElement(element =sodium , fractionmass =0.00619 );
  aqueoushumor->AddElement(element =chlorine , fractionmass =0.00541 );
  aqueoushumor->AddMaterial(material =bicarbonate , fractionmass =0.00085 );
@@ -451,7 +454,7 @@ G4Material* aqueoushumor= new G4Material(name = "aqueoushumor ", density = 1.00*
 
 
 G4Material* cornea= new G4Material(name = "cornea", density = 1.024*g/cm3, ncomponents = 13);
- cornea->AddMaterial(material =H2O , fractionmass =0.78000 );
+ cornea->AddMaterial(material =myWater , fractionmass =0.78000 );
  cornea->AddMaterial(material =collagen , fractionmass =0.15000 );
  cornea->AddElement(element =chlorine , fractionmass =0.01977 );
  cornea->AddElement(element =sodium , fractionmass =0.01725 );
@@ -467,7 +470,7 @@ G4Material* cornea= new G4Material(name = "cornea", density = 1.024*g/cm3, ncomp
 
 
 G4Material* sclera= new G4Material(name = "sclera", density = 1.049*g/cm3, ncomponents = 14);
- sclera->AddMaterial(material =H2O , fractionmass =0.68000 );
+ sclera->AddMaterial(material =myWater , fractionmass =0.68000 );
  sclera->AddMaterial(material =collagen , fractionmass =0.27000 );
  sclera->AddMaterial(material =elastin , fractionmass =0.01000 );
  sclera->AddElement(element =oxygen , fractionmass =0.00985 );
@@ -496,7 +499,7 @@ G4Material* tumor= new G4Material(name = "tumor", density = 1.049*g/cm3, ncompon
 
 
 G4Material* vitreoushumor= new G4Material(name = "vitreoushumor", density = 1.0065*g/cm3, ncomponents = 10);
- vitreoushumor->AddMaterial(material =H2O , fractionmass =0.99064 );
+ vitreoushumor->AddMaterial(material =myWater , fractionmass =0.99064 );
  vitreoushumor->AddElement(element =chlorine , fractionmass =0.00431 );
  vitreoushumor->AddElement(element =sodium , fractionmass =0.00337 );
  vitreoushumor->AddMaterial(material =glucose , fractionmass =0.00054 );
@@ -509,7 +512,7 @@ G4Material* vitreoushumor= new G4Material(name = "vitreoushumor", density = 1.00
 
 
 G4Material* choroidea= new G4Material(name = "choroidea", density = 1.002*g/cm3, ncomponents = 14);
- choroidea->AddMaterial(material =H2O , fractionmass =0.68000 );
+ choroidea->AddMaterial(material =myWater , fractionmass =0.68000 );
  choroidea->AddMaterial(material =collagen , fractionmass =0.27000 );
  choroidea->AddMaterial(material =elastin , fractionmass =0.01000 );
  choroidea->AddElement(element =oxygen , fractionmass =0.00985 );
@@ -526,7 +529,7 @@ G4Material* choroidea= new G4Material(name = "choroidea", density = 1.002*g/cm3,
 
 
 G4Material* netzhaut= new G4Material(name = "netzhaut", density = 1.008*g/cm3, ncomponents = 10);
- netzhaut->AddMaterial(material =H2O , fractionmass =0.99064 );
+ netzhaut->AddMaterial(material =myWater , fractionmass =0.99064 );
  netzhaut->AddElement(element =chlorine , fractionmass =0.00431 );
  netzhaut->AddElement(element =sodium , fractionmass =0.00337 );
  netzhaut->AddMaterial(material =glucose , fractionmass =0.00054 );
@@ -540,13 +543,13 @@ G4Material* netzhaut= new G4Material(name = "netzhaut", density = 1.008*g/cm3, n
  //hier stand in der .py Datei state = solid, weiß nicht, ob das wichtig ist
  G4Material* ruthenium = new G4Material(name = "ruthenium", density = 12.36*g/cm3, ncomponents = 1, state = kStateSolid);
   ruthenium->AddElement(element =Ru, fractionmass =1. );
-*/
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 G4VPhysicalVolume* B3DetectorConstruction::Construct()
 {
+
 //meins
   G4NistManager* nist = G4NistManager::Instance();
   G4Material* myWater = nist->FindOrBuildMaterial("G4_WATER");
@@ -572,42 +575,19 @@ G4VPhysicalVolume* B3DetectorConstruction::Construct()
                         0,
                         checkOverlaps);
 
-
-//meins
 //------------------------------------------------------------------------------
-//------------------------------------------------------------------------------
-//Funktion draus machen
+//wichtig
+//die Namen der Detektoren, abgeleitet aus den .stl filenames werden in der Event
+//Action auch gebraucht, model_names ist ein static global string, wird also nur einmal
+//gesetzt und kann dann immer genutzt werden
 
-    struct dirent *de;  // Pointer for directory entry
-
-    // opendir() returns a pointer of DIR type.
-    DIR *dr = opendir("/Users/smller/Simulationen/ccb-plaque/models/");
-
-    if (dr == NULL)  // opendir returns NULL if couldn't open directory
-    {
-      G4cout << ("Could not open current directory") << G4endl;
-      return 0;
-    }
-
-    // Refer http://pubs.opengroup.org/onlinepubs/7990989775/xsh/readdir.html
-    // for readdir()
-    //model_names defined and saved in global_variables.hh, so it can be used in EventAction.cc
-    //extern int wastuichhier;
-    while ((de = readdir(dr)) != NULL){
-      if(strstr(de->d_name,".stl") != NULL)
-      {
-          model_names.push_back(de->d_name);
-      }
-    }
-    std::vector<int> model_names_test(5, 0);
-    std::vector<int>* model_names_ptr = &model_names_test;
-    G4cout << model_names_ptr->size() << G4endl;
-    closedir(dr);
+    meine_globalen_Variablen* obj = new meine_globalen_Variablen();
+    std::vector<std::string> model_names = obj->model_names_;
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-    //realsise and place all .stl objects in geant4
+    //realise and place all .stl objects in geant4
     if (model_names.empty())
     {
         G4cout << ("No models found, empty physworld") << G4endl;
@@ -615,42 +595,34 @@ G4VPhysicalVolume* B3DetectorConstruction::Construct()
     }
     else
     {
-        //Material bestimmen aus dem Namen der .stl File, später mit MatchMaterialtoSTL
+        //Material bestimmen aus dem Namen der .stl File, mit MatchMaterialtoSTL
         G4Material* logical_material;
 
-
         //std::vector<std::shared_ptr<CADMesh::TessellatedMesh>> model_mesh_vector; //works but decltype is better since ..FromSTL has a template that can be saved this way instead of saying it is always CADMEsh
-        std::vector<decltype(CADMesh::TessellatedMesh::FromSTL("../ccbPlaque/models/"+ model_names[0]))> model_mesh_vector;
+        std::vector<decltype(CADMesh::TessellatedMesh::FromSTL("../ccb-plaque/models/"+ model_names[0]))> model_mesh_vector;
         std::vector<G4LogicalVolume*> model_logical_vector;
         std::vector<G4MultiFunctionalDetector*> my_Scorers_vector;
 
         for(unsigned int i = 0; i < model_names.size(); i++)
         {
            //construct Logical Volumes from .stl files via CADMeesh 2.0
-            //logical_material = B3DetectorConstruction::MatchMaterialToSTL(model_names[i]);
-            model_mesh_vector.push_back(CADMesh::TessellatedMesh::FromSTL("../ccbPlaque/models/"+ model_names[i]));
+            logical_material = B3DetectorConstruction::MatchMaterialToSTL(model_names[i]);
+            model_mesh_vector.push_back(CADMesh::TessellatedMesh::FromSTL("../ccb-plaque/models/"+ model_names[i]));
             model_logical_vector.push_back(new G4LogicalVolume(model_mesh_vector[i]->GetSolid()
-                                                //, logical_material
-                                                , myWater
-                                                , "logical"
+                                                , logical_material
+                                                //, myWater
+                                                , "logical_" + model_names[i]
                                                 , 0, 0, 0));
-
-
 
            //MultiFunctional Detector(link: https://agenda.infn.it/event/5981/sessions/10089/attachments/43814/52014/SensitiveDetector_alghero2013.pdfg)
            //!!!Do NOT change the MultiDetector name, if you do you need to change it in EventAction.cc as well!!!!!
             my_Scorers_vector.push_back(new G4MultiFunctionalDetector("my_" + std::string(model_names[i]) + "_Scorer"));
+
             G4SDManager::GetSDMpointer() -> AddNewDetector(my_Scorers_vector[i]);
-            //kann hier oder auch unten stehen, eine version im pdf eine in examples
+
             model_logical_vector[i]->SetSensitiveDetector(my_Scorers_vector[i]);
-            //in dem oben genannten Link steht nur -> Register und PrimitiveSensitivity,
-            //die sind jewils nicht bekannt , PrimitiveScorer und RegisterPrimitive
-            //jedoch schon, zu sehen in example B3a, daher auch SetSensitiveDetector,
-            //nicht sicher, ob das muss und was es tut
             G4VPrimitiveScorer* totalDose = new G4PSDoseDeposit("TotalDose");
             my_Scorers_vector[i]->RegisterPrimitive(totalDose);
-
-
 
 
             //Place Volume in the World
@@ -665,50 +637,43 @@ G4VPhysicalVolume* B3DetectorConstruction::Construct()
     }
 
 
-
-/*
-  // Visualization attributes
-  //
-  logicRing->SetVisAttributes (G4VisAttributes::GetInvisible());
-  logicDetector->SetVisAttributes (G4VisAttributes::GetInvisible());
-
-  // Print materials
-  G4cout << *(G4Material::GetMaterialTable()) << G4endl;
-*/
-
   //always return the physical World
   //
   return physWorld;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+//globales abspeichern der Namen der stl-files, da diese Namen zur Detektoridentifikation genutzt werden in EventAction
 
-void B3DetectorConstruction::ConstructSDandField()
-{
-  G4SDManager::GetSDMpointer()->SetVerboseLevel(1);
+std::vector<std::string> B3DetectorConstruction::readStlFilenames(){
+  // Refer http://pubs.opengroup.org/onlinepubs/7990989775/xsh/readdir.html
+  // for readdir()
+  // model_names defined and saved in global_variables.hh, so it can be used in EventAction.cc
 
-  // declare crystal as a MultiFunctionalDetector scorer
-  //
-  /*
-  G4MultiFunctionalDetector* cryst = new G4MultiFunctionalDetector("crystal");
-  G4SDManager::GetSDMpointer()->AddNewDetector(cryst);
-  G4VPrimitiveScorer* primitiv1 = new G4PSEnergyDeposit("edep");
-  cryst->RegisterPrimitive(primitiv1);
-  SetSensitiveDetector("CrystalLV",cryst);
+  struct dirent *de;
+  std::vector<std::string> model_names;
+  DIR *dr = opendir("/Users/smller/Simulationen/ccb-plaque/models/");
 
-  // declare patient as a MultiFunctionalDetector scorer
-  //
-  G4MultiFunctionalDetector* patient = new G4MultiFunctionalDetector("patient");
-  G4SDManager::GetSDMpointer()->AddNewDetector(patient);
-  G4VPrimitiveScorer* primitiv2 = new G4PSDoseDeposit("dose");
-  patient->RegisterPrimitive(primitiv2);
-  SetSensitiveDetector("PatientLV",patient);
-  */
+
+  if (dr == NULL)  // opendir returns NULL if couldn't open directory
+  {
+    G4cout << ("Could not open current directory") << G4endl;
+  }
+
+
+  while ((de = readdir(dr)) != NULL){
+    if(strstr(de->d_name,".stl") != NULL)
+    {
+        model_names.push_back(de->d_name);
+    }
+  }
+
+  return model_names;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+// Zuweisung der Materialien zu den verschiedenen Augenbestandteilen
 
-/*
 G4Material* B3DetectorConstruction::MatchMaterialToSTL(std::string model_name)
 {
     G4NistManager* nist = G4NistManager::Instance();
@@ -724,13 +689,12 @@ G4Material* B3DetectorConstruction::MatchMaterialToSTL(std::string model_name)
     else if (model_name.find("Fovea")){model_material = nist->FindOrBuildMaterial("netzhaut");}
     else if (model_name.find("Sehnerv")){model_material = nist->FindOrBuildMaterial("eyenerve");}
     else if (model_name.find("Applikator")){model_material = nist->FindOrBuildMaterial("Ru");}
-    else if (model_name.find("Target")){model_material = nist->FindOrBuildMaterial("Ru");}
+    else if (model_name.find("Target")){model_material = nist->FindOrBuildMaterial("Ru");}    //silver!!!!!!
         else if (model_name.find("Bunny")){model_material = nist->FindOrBuildMaterial("eyelens");}
     else
     {
         G4cout<< "no material found for this eye component, instead water was used" << G4endl;
-        model_material = nist->FindOrBuildMaterial("H20");
+        model_material = nist->FindOrBuildMaterial("G4_WATER");
     }
     return model_material;
 }
-*/

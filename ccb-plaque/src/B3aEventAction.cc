@@ -38,25 +38,19 @@
 #include "G4THitsMap.hh"
 #include "G4UnitsTable.hh"
 #include "G4SystemOfUnits.hh"
+#include "meine_globalen_Variablen.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-//extern int idontknow;
-//extern std::vector<int>* model_names_ptr;
-//extern int idontknow;
-//int b = idontknow;
+meine_globalen_Variablen* obj_EA = new meine_globalen_Variablen();
+std::vector<std::string> model_names_EA = obj_EA->model_names_;
 
-
-//must be here its an externally defined global variable, (in DetectorConstruction)
-extern std::vector<std::string> model_names;
-
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B3aEventAction::B3aEventAction(B3aRunAction* runAction)
  : G4UserEventAction(),
    fRunAction(runAction),
-   fCollID_cryst(-1),
-   fCollID_patient(-1),
-   fCollID_eyeparts(model_names.size(), -1) //sets all the ID's of all the eyepart detectors to -1
+   fCollID_eyeparts(model_names_EA.size(), -1) //sets all the ID's of all the eyepart detectors to -1
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -69,6 +63,7 @@ B3aEventAction::~B3aEventAction()
 void B3aEventAction::BeginOfEventAction(const G4Event* /*evt*/)
 { }
 
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void B3aEventAction::EndOfEventAction(const G4Event* evt )
@@ -78,76 +73,44 @@ void B3aEventAction::EndOfEventAction(const G4Event* evt )
   G4HCofThisEvent* HCE = evt->GetHCofThisEvent();
   if(!HCE) return;
 
-/*
    // Get hits collections IDs
-  if (fCollID_cryst < 0) {
-    G4SDManager* SDMan = G4SDManager::GetSDMpointer();
-    fCollID_cryst   = SDMan->GetCollectionID("crystal/edep");
-    fCollID_patient = SDMan->GetCollectionID("patient/dose");
-  }
-*/
-
-
-  //Get hits collection IDs, if its the first time they are called (in Constructor
-  //initialized with -1 which is <0)
-  G4SDManager* SDMan = G4SDManager::GetSDMpointer();
-  for(unsigned long int i = 0; i < model_names.size(); i++)
-  {
-    if (fCollID_eyeparts[i] < 0)
-    {
-      fCollID_eyeparts[i] = SDMan->GetCollectionID("my_" + std::string(model_names[i]) + "_Scorer"+ "/TotalDose");
-    }
+  if(fCollID_eyeparts[0] < 0){
+    fCollID_eyeparts = B3aEventAction::setCollIDs();
   }
 
-/*
-  //Energy in crystals : identify 'good events'
-  //
-  const G4double eThreshold = 500*keV;
-  G4int nbOfFired = 0;
-
-  G4THitsMap<G4double>* evtMap =
-                     (G4THitsMap<G4double>*)(HCE->GetHC(fCollID_cryst));
-
+  //meine Dose deposit in eyeparts
   std::map<G4int,G4double*>::iterator itr;
-  for (itr = evtMap->GetMap()->begin(); itr != evtMap->GetMap()->end(); itr++) {
-    ///G4int copyNb  = (itr->first);
-    G4double edep = *(itr->second);
-    if (edep > eThreshold) nbOfFired++;
-    ///G4cout << "\n  cryst" << copyNb << ": " << edep/keV << " keV ";
-  }
-  if (nbOfFired == 2) fRunAction->CountEvent();
-
-  //Dose deposit in patient
-  //
-  G4double dose = 0.;
-
-  evtMap = (G4THitsMap<G4double>*)(HCE->GetHC(fCollID_patient));
-
-  for (itr = evtMap->GetMap()->begin(); itr != evtMap->GetMap()->end(); itr++)
-  {
-    ///G4int copyNb  = (itr->first);
-    dose = *(itr->second);
-  }
-  if (dose > 0.) fRunAction->SumDose(dose);
-*/
-
-  std::map<G4int,G4double*>::iterator itr;
-  //Dose deposit in eyeparts
-  std::vector<G4double> eye_doses(model_names.size(), 0.);
+  std::vector<G4double> eye_doses(model_names_EA.size(), 0.);
+  G4double eye_dose = 0.;
   std::vector<G4THitsMap<G4double>*> evtMaps;
-
-  for(int i = 0; i < (int)fCollID_eyeparts.size(); i++)
+  //std::cout << "o00o0o0o0o0o0o0o0o0o0o0o000o0o0o0o0o00o0o0o00o0o00o0" << std::endl;
+  for(int i = 0; i < int(fCollID_eyeparts.size()); i++)
   {
+    eye_dose = 0.;
     evtMaps.push_back((G4THitsMap<G4double>*)(HCE->GetHC(fCollID_eyeparts[i])));
     for (itr = evtMaps[i]->GetMap()->begin(); itr != evtMaps[i]->GetMap()->end(); itr++)
     {
-      ///G4int copyNb  = (itr->first);
-      //???why is eye_doses blue?
-      eye_doses[i] = *(itr->second);
+      eye_dose = *(itr->second);  //siehe B3a basic example
     }
-    if (eye_doses[i] > 0.) fRunAction->SumDose(eye_doses[i]);
-  }
+    eye_doses[i] = eye_dose;  //das hier wäre nicht nötig im nächsten if kann man auch einfach eye_dose schreiben, aber vlt sehe ich enfach gerade den Grnd nicht mehr, es schadet jedenfalls nicht
 
+    if (eye_doses[i] > 0.) fRunAction->SumDose_eyeparts(eye_doses[i], i);
+  }
 }
 
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+std::vector<G4int> B3aEventAction::setCollIDs()
+{
+  G4SDManager* SDMan = G4SDManager::GetSDMpointer();
+  std::vector<G4int> fCollID_eyeparts_init;
+  G4int eyes_ID;
+
+  for(unsigned long int i = 0; i < model_names_EA.size(); i++)
+  {
+    eyes_ID = SDMan->GetCollectionID("my_" + std::string(model_names_EA[i]) + "_Scorer/TotalDose");
+    fCollID_eyeparts_init.push_back(eyes_ID);
+  }
+  return fCollID_eyeparts_init;
+}
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

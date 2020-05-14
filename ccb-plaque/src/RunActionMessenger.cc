@@ -23,44 +23,43 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
+/// \file electromagnetic/TestEm2/src/RunActionMessenger.cc
+/// \brief Implementation of the RunActionMessenger class
 //
-/// \file B3DetectorConstruction.hh
-/// \brief Definition of the B3DetectorConstruction class
+//
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef B3DetectorConstruction_h
-#define B3DetectorConstruction_h 1
+#include "RunActionMessenger.hh"
 
-#include "G4VUserDetectorConstruction.hh"
-#include "globals.hh"
-#include "meine_globalen_Variablen.hh"
-//brauchte ccb-Plaque nicht, irgendwas stimmt nicht
-#include "G4Material.hh"
-#include <string>
-#include <vector>
-
-class G4VPhysicalVolume;
-class G4LogicalVolume;
-
-/// Detector construction class to define materials and geometry.
-
-
-class B3DetectorConstruction : public G4VUserDetectorConstruction, meine_globalen_Variablen
-{
-  public:
-    B3DetectorConstruction();
-    virtual ~B3DetectorConstruction();
-
-  public:
-    virtual G4VPhysicalVolume* Construct();
-    static std::vector<std::string> readStlFilenames();
-
-  private:
-    void DefineMaterials();
-    G4Material* MatchMaterialToSTL(std::string model_name);
-
-    G4bool  fCheckOverlaps;
-};
+#include "B3aRunAction.hh"
+#include "G4UIdirectory.hh"
+#include "G4UIcmdWith3Vector.hh"
+#include "G4UIcmdWithAString.hh"
+#include "G4UIcmdWithAnInteger.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#endif
+RunActionMessenger::RunActionMessenger(B3aRunAction* run)
+:G4UImessenger(),fRun(run), fHFileCmd(0)
+{
+  fHFileCmd = new G4UIcmdWithAString("/mycommands/setFileName",this);
+  fHFileCmd->SetGuidance("set name for the histograms file");
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+RunActionMessenger::~RunActionMessenger()
+{
+  delete fHFileCmd;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void RunActionMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
+{
+  if (command == fHFileCmd)
+   {fRun->SetFileName(newValue);}
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

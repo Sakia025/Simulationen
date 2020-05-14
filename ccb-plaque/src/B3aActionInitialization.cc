@@ -23,10 +23,10 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-// //
+//
 /// \file B3aActionInitialization.cc
 /// \brief Implementation of the B3aActionInitialization class
-//
+
 #include "B3aActionInitialization.hh"
 #include "B3aRunAction.hh"
 #include "B3aEventAction.hh"
@@ -61,6 +61,6 @@ void B3aActionInitialization::Build() const
   SetUserAction(new B3aEventAction(runAction));
   SetUserAction(new B3PrimaryGeneratorAction);
   SetUserAction(new B3StackingAction);
-}
+}  
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
