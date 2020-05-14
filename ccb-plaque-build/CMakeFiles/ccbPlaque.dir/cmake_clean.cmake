@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ccbPlaque.dir/src/B3aRunAction.cc.o"
   "CMakeFiles/ccbPlaque.dir/src/PhysicsList.cc.o"
   "CMakeFiles/ccbPlaque.dir/src/PhysicsListMessenger.cc.o"
+  "CMakeFiles/ccbPlaque.dir/src/RunActionMessenger.cc.o"
   "ccbPlaque"
   "ccbPlaque.pdb"
 )
