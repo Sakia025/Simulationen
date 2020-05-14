@@ -33,26 +33,37 @@
 #include "G4UserRunAction.hh"
 #include "G4Accumulable.hh"
 #include "globals.hh"
+#include "meine_globalen_Variablen.hh"
 #include <vector>
 
+
+class G4Run;
+class G4LogicalVolume;
+class RunActionMessenger;
 /// Run action class
 
-class B3aRunAction : public G4UserRunAction
+class B3aRunAction : public G4UserRunAction, public meine_globalen_Variablen
 {
   public:
     B3aRunAction();
     virtual ~B3aRunAction();
 
+    //virtual G4Run* GenerateRun(); //kam aus dem abspeichern von Henning, brauch ich das wirklich?
     virtual void BeginOfRunAction(const G4Run*);
     virtual void   EndOfRunAction(const G4Run*);
 
     void CountEvent()           { fGoodEvents += 1; };
     void SumDose(G4double dose) { fSumDose += dose; };
-
+    void SumDose_eyeparts(G4double dose, G4int nr) { fSumDose_eyeparts[nr] += dose; };
+    // Histogram name
+    void SetFileName(G4String& val);
 private:
     G4Accumulable<G4int>    fGoodEvents;
     G4Accumulable<G4double> fSumDose;
     std::vector<G4Accumulable<G4double>> fSumDose_eyeparts;
+
+    RunActionMessenger*     fRunMessenger;
+    G4String fFileName;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

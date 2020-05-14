@@ -35,9 +35,16 @@
 #include "G4AccumulableManager.hh"
 #include "G4UnitsTable.hh"
 #include "G4SystemOfUnits.hh"
+#include "meine_globalen_Variablen.hh"
+#include "RunActionMessenger.hh"
 
-//must be here its an externally defined global variable, (in DetectorConstruction)
-extern std::vector<std::string> model_names;
+#include <fstream>
+#include <iostream>
+
+
+meine_globalen_Variablen* obj = new meine_globalen_Variablen();
+std::vector<std::string> model_names = obj->model_names_;
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B3aRunAction::B3aRunAction()
@@ -46,6 +53,8 @@ B3aRunAction::B3aRunAction()
    fSumDose(0.),
    fSumDose_eyeparts(model_names.size(), 0.)
 {
+  fRunMessenger = new RunActionMessenger(this);
+  //fFileName = "standardEnergy.dat";
   //add new units for dose
   //
   const G4double milligray = 1.e-3*gray;
@@ -58,12 +67,13 @@ B3aRunAction::B3aRunAction()
   new G4UnitDefinition("nanogray" , "nanoGy"  , "Dose", nanogray);
   new G4UnitDefinition("picogray" , "picoGy"  , "Dose", picogray);
 
+
   // Register accumulable to the accumulable manager
   G4AccumulableManager* accumulableManager = G4AccumulableManager::Instance();
   accumulableManager->RegisterAccumulable(fGoodEvents);
-  accumulableManager->RegisterAccumulable(fSumDose);
+  accumulableManager->RegisterAccumulable(fSumDose);  //not needed, from B3a example
 
-
+  //my Eye Detectors
   for (int i = 0; i < (int)fSumDose_eyeparts.size(); i++)
   {
     accumulableManager->RegisterAccumulable(fSumDose_eyeparts[i]);
@@ -74,8 +84,24 @@ B3aRunAction::B3aRunAction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B3aRunAction::~B3aRunAction()
-{ }
+{
+  delete fRunMessenger;
+}
 
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void B3aRunAction::SetFileName(G4String& val)
+{
+  fFileName = val;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+/*
+G4Run* B1RunAction::GenerateRun()
+{
+  return new B1Run;
+}
+*/
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void B3aRunAction::BeginOfRunAction(const G4Run* run)
@@ -101,22 +127,10 @@ void B3aRunAction::EndOfRunAction(const G4Run* run)
   G4AccumulableManager* accumulableManager = G4AccumulableManager::Instance();
   accumulableManager->Merge();
 
-  // Run conditions
-  //  note: There is no primary generator action object for "master"
-  //        run manager for multi-threaded mode.
-  const B3PrimaryGeneratorAction* generatorAction
-    = static_cast<const B3PrimaryGeneratorAction*>(
-        G4RunManager::GetRunManager()->GetUserPrimaryGeneratorAction());
-  G4String partName;
-  if (generatorAction)
-  {
-    G4ParticleDefinition* particle
-      = generatorAction->GetParticleGun()->GetParticleDefinition();
-    partName = particle->GetParticleName();
-  }
 
   // Print results
   //
+
   if (IsMaster())
   {
     G4cout
@@ -125,23 +139,14 @@ void B3aRunAction::EndOfRunAction(const G4Run* run)
      << G4endl
      << "  The run was " << nofEvents << " events ";
   }
-  else
-  {
-    G4cout
-     << G4endl
-     << "--------------------End of Local Run------------------------"
-     << G4endl
-     << "  The run was " << nofEvents << " "<< partName;
+
+  //Output Filename wird mit set/commands SetFilenames in der run_.mac gesetzt
+  std::ofstream myfile(fFileName, std::ofstream::app);
+  std::cout << fFileName;
+  for(int i = 0; i < (int)fSumDose_eyeparts.size(); i++){
+    myfile << "Dose in ," << std::string(model_names[i])<< ", " << G4BestUnit(fSumDose_eyeparts[i].GetValue(),"Dose") << G4endl;
   }
-  G4cout
-     << "; Nb of 'good' e+ annihilations: " << fGoodEvents.GetValue()  << G4endl
-     << " Total dose in patient : " << G4BestUnit(fSumDose.GetValue(),"Dose")
-     << G4endl
-     << "------------------------------------------------------------" << G4endl
-     << "OOOOOooooOOOOOooooooOOOOOooooooOOOOOooooOOOOOOoooooOOOOOOoooooOOO" << G4endl
-     << "Dose in one example eyepart : " << G4BestUnit(fSumDose_eyeparts[0].GetValue(),"Dose")
-     << G4endl;
-  std::cout << "Dose in one example eyepart : " << G4BestUnit(fSumDose_eyeparts[0].GetValue(),"Dose") << std::endl;
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

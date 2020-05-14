@@ -32,6 +32,7 @@
 
 #include "G4UserEventAction.hh"
 #include "globals.hh"
+#include "meine_globalen_Variablen.hh"
 #include <vector>
 
 class B3aRunAction;
@@ -42,7 +43,7 @@ class B3aRunAction;
 /// from Hits Collections, and accumulated statistic for
 /// B3RunAction::EndOfRunAction().
 
-class B3aEventAction : public G4UserEventAction
+class B3aEventAction : public G4UserEventAction, meine_globalen_Variablen
 {
   public:
     B3aEventAction(B3aRunAction* runAction);
@@ -51,11 +52,11 @@ class B3aEventAction : public G4UserEventAction
     virtual void  BeginOfEventAction(const G4Event*);
     virtual void    EndOfEventAction(const G4Event*);
 
+    static std::vector<G4int> setCollIDs();
+
   private:
     B3aRunAction*  fRunAction;
-    G4int fCollID_cryst;
-    G4int fCollID_patient;
-    std::vector<G4int> fCollID_eyeparts;
+    std::vector<int> fCollID_eyeparts;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
